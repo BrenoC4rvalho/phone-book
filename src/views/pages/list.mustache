@@ -1,0 +1,43 @@
+{{>partials/header}}
+
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 48
+    }
+    
+</style>
+
+    <table class="mt-3 container table table-dark table-striped">
+
+        <thead>
+            <tr>
+                <th scope="col">Full Name</th>
+                <th scope="col">Number</th>
+                <th scope="col">Email</th>
+                <th scope="col">edit</th>
+                <th scope="col">delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#contacts}}
+                <tr>
+                    <th scope="row">{{fullname}}</th>
+                    <td>{{tel}}</td>
+                    <td>{{email}}</td>
+                    <td>
+                        <a href="/edit/{{id}}"><span class="material-symbols-outlined">edit</span></a>
+                    </td>
+                    <td>
+                        <a href="/delete/{{id}}"><span class="material-symbols-outlined">delete</span></a>
+                    </td>
+                </tr>
+            {{/contacts}}
+        </tbody>
+
+    </table>
+
+{{>partials/footer}}
